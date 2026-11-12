@@ -56,25 +56,18 @@
     padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
   }
 
-  header { padding: max(1.25rem, env(safe-area-inset-top, 0px)) 0 1.25rem; }
-  header .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
-  .logo { font-family: var(--display); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; text-decoration: none; padding: 0.5rem 0; }
-  nav { display: flex; gap: 0.25rem 1.5rem; }
-  nav a { color: var(--muted); text-decoration: none; font-size: 0.975rem; padding: 0.6rem 0; }
-  nav a:hover { color: var(--ink); }
-
-  .hero { padding: clamp(3.5rem, 10vw, 7.5rem) 0 clamp(3rem, 8vw, 6rem); }
+  .hero { padding: calc(clamp(2rem, 5vw, 3.5rem) + env(safe-area-inset-top, 0px)) 0 clamp(1.75rem, 4vw, 2.75rem); }
   h1 {
     font-family: var(--display);
     font-weight: 700;
     font-size: clamp(2.5rem, 7.5vw, 5.25rem);
     line-height: 1.02;
     letter-spacing: -0.035em;
-    margin: 0 0 1.75rem;
+    margin: 0 0 1rem;
     max-width: 14ch;
     overflow-wrap: break-word;
   }
-  .lede { max-width: 52ch; color: var(--muted); font-size: 1.2rem; margin: 0 0 2.25rem; }
+  .lede { max-width: 52ch; color: var(--muted); font-size: 1.2rem; margin: 0; }
   .btn {
     display: inline-block;
     background: var(--accent);
@@ -86,8 +79,8 @@
   }
   .btn:hover { filter: brightness(1.08); }
 
-  section { border-top: 1px solid var(--line); padding: clamp(2.5rem, 6vw, 4rem) 0; }
-  .grid { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
+  section { border-top: 1px solid var(--line); padding: clamp(1.5rem, 3.5vw, 2.25rem) 0; }
+  .grid { display: grid; grid-template-columns: 1fr 2fr; gap: 1.25rem; }
   h2 { font-family: var(--display); font-weight: 500; font-size: 1.5rem; letter-spacing: -0.02em; margin: 0; }
 
   .statement {
@@ -97,10 +90,10 @@
     line-height: 1.25; letter-spacing: -0.025em;
   }
 
-  .services { list-style: none; margin: 2.5rem 0 0; padding: 0; max-width: 34rem; }
+  .services { list-style: none; margin: 1.25rem 0 0; padding: 0; max-width: 34rem; }
   .services li {
     display: grid; grid-template-columns: 3.5rem 1fr; align-items: baseline;
-    padding: 1rem 0; border-top: 1px solid var(--line);
+    padding: 0.55rem 0; border-top: 1px solid var(--line);
   }
   .services li:first-child { border-top: 0; }
   .services .n { color: var(--accent); font-family: var(--display); font-weight: 500; letter-spacing: 0.04em; }
@@ -111,33 +104,19 @@
     font-size: clamp(1.5rem, 4.5vw, 2.5rem); letter-spacing: -0.025em;
     text-decoration-thickness: 2px; text-underline-offset: 0.2em; text-decoration-color: var(--accent);
   }
-  .contact p { color: var(--muted); margin: 0 0 1rem; max-width: 46ch; }
-
-  footer { overflow: hidden; border-top: 1px solid var(--line); padding: 2rem 0 0; }
-  .mark {
-    font-family: var(--display); font-weight: 700;
-    font-size: clamp(3.25rem, 19vw, 13rem);
-    white-space: nowrap;
-    line-height: 0.8; letter-spacing: -0.05em;
-    margin: 0 0 -0.08em -0.04em;
-    color: var(--ink);
-    user-select: none;
-  }
-  .small { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; color: var(--muted); font-size: 0.9rem; padding-bottom: 1.25rem; }
-
-  footer .wrap { padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .contact { padding-bottom: calc(clamp(1.5rem, 3.5vw, 2.25rem) + env(safe-area-inset-bottom, 0px)); }
+  .contact p { color: var(--muted); margin: 0 0 0.5rem; max-width: 46ch; }
 
   @media (max-width: 900px) {
-    .grid { grid-template-columns: 1fr 1.6fr; gap: 1.5rem; }
+    .grid { grid-template-columns: 1fr 1.6fr; gap: 1rem; }
   }
 
   @media (max-width: 720px) {
-    .grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    .grid { grid-template-columns: 1fr; gap: 0.5rem; }
     h1 { max-width: none; }
     .statement { max-width: none; }
-    .services { max-width: none; margin-top: 2rem; }
+    .services { max-width: none; margin-top: 1rem; }
     .contact .mail { overflow-wrap: anywhere; }
-    .small { flex-direction: column; gap: 0.25rem; }
   }
 
   @media (max-width: 400px) {
@@ -153,16 +132,6 @@
 </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap">
-    <a class="logo" href="#top">25eleven</a>
-    <nav aria-label="Primary">
-      <a href="#work">What we do</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
 
 <main id="top">
   <div class="wrap hero">
@@ -196,19 +165,7 @@
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="small">
-      <span>© <span id="yr">2026</span> 25eleven. All rights reserved.</span>
-      <span>Independent AI consultancy · India · Working everywhere</span>
-    </div>
-    <div class="mark" aria-hidden="true">25eleven</div>
-  </div>
-</footer>
-
 <script>
-  try { document.getElementById("yr").textContent = new Date().getFullYear(); } catch (e) {}
-
   // Assemble the email address in the browser so it never appears in the page source.
   (function () {
     try {
