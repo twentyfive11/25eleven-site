@@ -106,7 +106,7 @@
   .services .n { color: var(--accent); font-family: var(--display); font-weight: 500; letter-spacing: 0.04em; }
   .services .t { font-family: var(--display); font-weight: 700; font-size: 1.15rem; letter-spacing: 0.08em; text-transform: uppercase; }
 
-  .contact a.mail {
+  .contact .mail {
     font-family: var(--display); font-weight: 700;
     font-size: clamp(1.5rem, 4.5vw, 2.5rem); letter-spacing: -0.025em;
     text-decoration-thickness: 2px; text-underline-offset: 0.2em; text-decoration-color: var(--accent);
@@ -136,7 +136,7 @@
     h1 { max-width: none; }
     .statement { max-width: none; }
     .services { max-width: none; margin-top: 2rem; }
-    .contact a.mail { overflow-wrap: anywhere; }
+    .contact .mail { overflow-wrap: anywhere; }
     .small { flex-direction: column; gap: 0.25rem; }
   }
 
@@ -190,7 +190,7 @@
       <h2>Contact</h2>
       <div>
         <p>Tell us what you’re trying to get done.</p>
-        <a class="mail" href="mailto:hello@25eleven.in">hello@25eleven.in</a>
+        <span class="mail" id="mail">hello [at] 25eleven [dot] in</span>
       </div>
     </div>
   </section>
@@ -208,6 +208,19 @@
 
 <script>
   try { document.getElementById("yr").textContent = new Date().getFullYear(); } catch (e) {}
+
+  // Assemble the email address in the browser so it never appears in the page source.
+  (function () {
+    try {
+      var el = document.getElementById("mail");
+      var addr = ["hel", "lo"].join("") + String.fromCharCode(64) + ["25ele", "ven"].join("") + String.fromCharCode(46) + "in";
+      var a = document.createElement("a");
+      a.className = "mail";
+      a.href = "mail" + "to:" + addr;
+      a.textContent = addr;
+      el.parentNode.replaceChild(a, el);
+    } catch (e) { /* the plain-text fallback stays visible */ }
+  })();
 </script>
 </body>
 </html>
