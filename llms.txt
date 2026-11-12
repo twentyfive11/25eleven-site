@@ -1,0 +1,21 @@
+# 25eleven
+
+> 25eleven is an independent AI consultancy based in India. Tagline: "Human thinking. Intelligent possibilities." We identify, implement and scale AI solutions that make work simpler, smarter and more effective.
+
+## Services
+
+- AI Strategy
+- Automation
+- AI Integration
+- AI Advisory
+
+## About
+
+- Name: 25eleven
+- Type: Independent AI consultancy
+- Based in: India
+- Website: https://25eleven.in/
+
+## Contact
+
+Contact details are on the website: https://25eleven.in/#contact
